@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.web.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.AllController">
+  <tabs>
+      <Tab text="Untitled Tab">
+         <content>
+            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <VBox>
+                     <children>
+                        <Label text="Attatch 类名" />
+                        <TextField fx:id="attachClassName" />
+                        <Label text="Attatch port" />
+                        <TextField fx:id="attachPort" />
+                        <Button fx:id="attachBegin" mnemonicParsing="false" onAction="#attachAndRecord" text="记录开始" />
+                        <ProgressBar prefWidth="200.0" progress="0.0" />
+                        <Button fx:id="attachShowResult" mnemonicParsing="false" onAction="#attachShowResult" text="显示记录" />
+                     </children>
+                  </VBox>
+                  <VBox>
+                     <children>
+                        <Label text="排除Pattern" />
+                        <TextArea fx:id="attachExcludePattern" prefHeight="200.0" prefWidth="200.0" />
+                        <Label text="Filter Pattern" />
+                        <TextArea fx:id="attachFilterPattern" prefHeight="200.0" prefWidth="200.0" />
+                        <CheckBox fx:id="attachCheckBox" mnemonicParsing="false" text="选中记录可以记录的全部方法" />
+                     </children>
+                     <HBox.margin>
+                        <Insets left="10.0" right="10.0" />
+                     </HBox.margin>
+                  </VBox>
+                  <VBox>
+                     <children>
+                        <Label text="开始记录标记" />
+                        <TextField fx:id="attachBeginRecordClassName" text="全类名" />
+                        <TextField fx:id="attachBeginRecordMethodName" text="方法名" />
+                        <Label text="参数名；参数名" />
+                        <TextArea fx:id="attachBeginRecordArgs" prefHeight="200.0" prefWidth="200.0" />
+                        <Label text="结束记录标记" />
+                        <TextField fx:id="attachStopClassName" text="全类名" />
+                        <TextField fx:id="attachStopMtdhodName" text="方法名" />
+                        <Label text="参数名；参数名" />
+                        <TextArea fx:id="stopRecordMethodArgs" prefHeight="200.0" prefWidth="200.0" />
+                     </children>
+                     <HBox.margin>
+                        <Insets left="10.0" right="10.0" />
+                     </HBox.margin>
+                  </VBox>
+               </children>
+               <padding>
+                  <Insets left="10.0" right="10.0" />
+               </padding>
+            </HBox>
+         </content>
+      </Tab>
+    <Tab text="Untitled Tab 1">
+         <content>
+            <HBox prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <VBox>
+                     <children>
+                        <Label text="连接类名" />
+                        <TextField fx:id="connectClassName" />
+                        <Label text="运行类路径" />
+                        <TextArea fx:id="connectClassPath" prefHeight="200.0" prefWidth="200.0" />
+                        <Button fx:id="beginButton" mnemonicParsing="false" onAction="#connectBegin" text="启动记录" />
+                        <ProgressBar fx:id="recodeProgress" prefWidth="200.0" progress="0.0" />
+                        <Button fx:id="connectShowResult" mnemonicParsing="false" onAction="#connectShowResult" text="显示记录" />
+                     </children>
+                     <HBox.margin>
+                        <Insets left="10.0" right="10.0" />
+                     </HBox.margin>
+                  </VBox>
+                  <VBox>
+                     <children>
+                        <Label text="排除的参数" />
+                        <TextArea fx:id="excludePattern" prefHeight="200.0" prefWidth="200.0" />
+                        <Label text="Filter" />
+                        <TextArea fx:id="filterPattern" prefHeight="200.0" prefWidth="200.0" />
+                        <CheckBox mnemonicParsing="false" text="记录全部可以记录的方法" />
+                     </children>
+                     <HBox.margin>
+                        <Insets left="10.0" right="10.0" />
+                     </HBox.margin>
+                  </VBox>
+                  <VBox alignment="TOP_CENTER" focusTraversable="true">
+                     <children>
+                        <Label text="开始记录标记" />
+                        <TextField fx:id="beginRecordClassName" text="全类名" />
+                        <TextField fx:id="beginRecordMethodName" text="方法名" />
+                        <Label text="方法参数；方法参数" />
+                        <TextArea fx:id="beginMethodArgs" prefHeight="200.0" prefWidth="200.0" />
+                        <Label text="结束记录标记" />
+                        <TextField fx:id="stopRecordClassName" text="全类名" />
+                        <TextField fx:id="stopRecordMethodName" text="方法名" />
+                        <Label text="方法参数；方法参数" />
+                        <TextArea fx:id="stopRecordMethodArgs" prefHeight="200.0" prefWidth="200.0" />
+                     </children>
+                     <HBox.margin>
+                        <Insets left="10.0" right="10.0" />
+                     </HBox.margin>
+                  </VBox>
+               </children>
+            </HBox>
+         </content>
+    </Tab>
+    <Tab text="Untitled Tab 2">
+      <content>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <WebView fx:id="myWebView" prefHeight="371.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+               </children></AnchorPane>
+      </content>
+    </Tab>
+  </tabs>
+</TabPane>
